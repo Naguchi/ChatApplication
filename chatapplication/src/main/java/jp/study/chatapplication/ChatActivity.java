@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import java.io.LineNumberReader;
 import java.util.Calendar;
@@ -31,6 +33,13 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        setContentView(R.layout.activity_chat);
+        WebView myWebView = (WebView)findViewById(R.id.webView1);
+        // 標準ブラウザの削除
+        myWebView.setWebViewClient(new WebViewClient());
+        // アプリ起動時に読み込むURL
+        myWebView.loadUrl("http://google.com");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
